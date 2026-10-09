@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stilltime</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <img class="brand-mark" src="icons/icon48.png" alt="">
+        <div><div class="brand-name">stilltime<span class="brand-period">.</span></div><div class="brand-caption">A little more aware</div></div>
+      </div>
+      <button id="tracking-toggle" class="live-pill track-toggle" type="button" aria-label="Pause tracking" title="Pause tracking" aria-pressed="false"><span class="live-dot"></span><span id="tracking-label">Tracking</span><span id="tracking-icon" class="tracking-icon" aria-hidden="true"></span></button>
+    </header>
+
+    <section class="intro">
+      <div><p class="eyebrow" id="date-label">YOUR BROWSING, GENTLY</p><h1 id="greeting">A clearer day.</h1></div>
+      <div class="window-mark" aria-hidden="true">◌</div>
+    </section>
+
+    <nav class="range-switch" aria-label="Time range">
+      <button data-range="today" class="active">Today</button><button data-range="7">7 days</button><button data-range="30">30 days</button><button data-range="all">All time</button>
+    </nav>
+
+    <section class="summary-card glass">
+      <div class="summary-copy"><div class="eyebrow">TIME ON THE WEB</div><div class="total-time" id="total-time">0<span>h</span> 00<span>m</span></div><div class="summary-sub" id="site-count">Across 0 websites</div></div>
+      <div class="summary-stat"><span class="stat-icon">↗</span><span class="stat-value" id="visit-count">0</span><span class="stat-label">visits</span></div>
+    </section>
+
+    <section class="chart-card glass">
+      <div class="section-heading"><div><div class="eyebrow">YOUR WEB MIX</div><div class="section-title">Where time went</div></div><span class="micro-label" id="chart-caption">TODAY</span></div>
+      <div class="chart-wrap">
+        <svg id="donut-chart" viewBox="0 0 220 220" role="img" aria-label="Time by website"></svg>
+        <div class="chart-center"><div class="center-time" id="chart-total">0h</div><div class="center-label">TOTAL TIME</div></div>
+      </div>
+      <div class="chart-hint"><span class="hint-sparkle">✳</span> Tap a site to explore its rhythm</div>
+    </section>
+
+    <section class="sites-section">
+      <div class="section-heading sites-heading"><div><div class="eyebrow">YOUR SITES</div><div class="section-title">The little details</div></div><span class="micro-label" id="site-sort">BY TIME</span></div>
+      <div id="site-list" class="site-list"></div>
+      <div id="empty-state" class="empty-state hidden"><div class="empty-orbit">◌</div><div class="empty-title">A fresh page</div><p>Your browsing time will appear here as you go.</p></div>
+    </section>
+
+    <section id="detail-card" class="detail-card glass hidden" aria-live="polite">
+      <div class="detail-head"><div class="detail-site"><span id="detail-favicon" class="favicon"></span><div><div id="detail-domain" class="detail-domain">example.com</div><div class="detail-sub">SITE DETAILS</div></div></div><button id="close-detail" class="icon-button" aria-label="Close details">×</button></div>
+      <div class="detail-metrics"><div><strong id="detail-time">0m</strong><span>time spent</span></div><div><strong id="detail-visits">0</strong><span>visits</span></div><div><strong id="detail-average">0m</strong><span>per visit</span></div></div>
+      <div class="history-head"><span>Daily rhythm</span><span>LAST 7 DAYS</span></div>
+      <div class="bar-chart" id="daily-bars"></div>
+    </section>
+
+    <footer class="footer"><div class="privacy-note"><span class="lock-icon">⌑</span><span>Private by nature. Stored on this device.</span></div><div class="footer-actions"><button id="export-button">Export</button><span>·</span><button id="clear-button">Clear data</button></div></footer>
+    <div id="toast" class="toast" role="status"></div>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

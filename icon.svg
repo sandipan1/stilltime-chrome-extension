@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="tile" x1="14" y1="10" x2="111" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DDF1E7"/>
+      <stop offset=".48" stop-color="#D3E8E1"/>
+      <stop offset="1" stop-color="#D0C9EF"/>
+    </linearGradient>
+    <linearGradient id="face" x1="39" y1="29" x2="87" y2="98" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FAFCF9"/>
+      <stop offset="1" stop-color="#F0F2EC"/>
+    </linearGradient>
+    <linearGradient id="mint" x1="36" y1="31" x2="85" y2="90" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F8D7B"/>
+      <stop offset="1" stop-color="#70A995"/>
+    </linearGradient>
+    <linearGradient id="lilac" x1="79" y1="34" x2="101" y2="75" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#806FC2"/>
+      <stop offset="1" stop-color="#A294D8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".15"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect x="2.5" y="2.5" width="123" height="123" rx="36" fill="url(#tile)"/>
+  <rect x="3.25" y="3.25" width="121.5" height="121.5" rx="35.25" fill="none" stroke="#fff" stroke-opacity=".9" stroke-width="1.5"/>
+  <path d="M18 34C28 15 46 8 65 8" fill="none" stroke="#fff" stroke-linecap="round" stroke-opacity=".68" stroke-width="2.5"/>
+  <g filter="url(#shadow)">
+    <circle cx="64" cy="63" r="42" fill="url(#face)" stroke="#fff" stroke-width="2"/>
+    <circle cx="64" cy="63" r="29.5" fill="none" stroke="#D7E1DA" stroke-width="13"/>
+    <g transform="rotate(-90 64 63)" fill="none" stroke-linecap="round" stroke-width="13">
+      <circle cx="64" cy="63" r="29.5" stroke="url(#mint)" stroke-dasharray="94 185" stroke-dashoffset="0"/>
+      <circle cx="64" cy="63" r="29.5" stroke="url(#lilac)" stroke-dasharray="59 185" stroke-dashoffset="-102"/>
+      <circle cx="64" cy="63" r="29.5" stroke="#D38567" stroke-dasharray="30 185" stroke-dashoffset="-169"/>
+    </g>
+    <circle cx="64" cy="63" r="12" fill="#F8FAF6"/>
+    <path d="M64 56V63l6.5 4" fill="none" stroke="#52776A" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    <circle cx="64" cy="63" r="2.6" fill="#8C7CC8"/>
+  </g>
+  <circle cx="100" cy="96" r="9" fill="#F7F8F3" stroke="#fff" stroke-width="1.5"/>
+  <path d="m100 90.8 1.7 3.5 3.5 1.7-3.5 1.7-1.7 3.5-1.7-3.5-3.5-1.7 3.5-1.7 1.7-3.5Z" fill="#8C7CC8"/>
+</svg>
